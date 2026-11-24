@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа — блочная модель</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка индивидуального варианта №2 -->
+    <header class="header">
+        <h1>Образовательный портал «Учись»</h1>
+        <nav class="navigation">
+            <a href="#task1">Задание 1</a>
+            <a href="#task2">Задание 2</a>
+            <a href="#task3">Задание 3</a>
+            <a href="#task4">Задание 4</a>
+            <a href="#task5">Задание 5</a>
+            <a href="#portal">Портал</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Задание №1 -->
+        <section id="task1" class="section">
+            <h2>Задание №1. Анализ блочной модели</h2>
+
+            <div class="block-example">Пример элемента</div>
+
+            <table class="result-table">
+                <tr>
+                    <th>Параметр</th>
+                    <th>content-box</th>
+                    <th>border-box</th>
+                </tr>
+                <tr>
+                    <td>Ширина содержимого</td>
+                    <td>360 px</td>
+                    <td>291 px</td>
+                </tr>
+                <tr>
+                    <td>Высота содержимого</td>
+                    <td>180 px</td>
+                    <td>113 px</td>
+                </tr>
+                <tr>
+                    <td>Полная ширина блока с рамкой и padding</td>
+                    <td>429 px</td>
+                    <td>360 px</td>
+                </tr>
+                <tr>
+                    <td>Полная ширина вместе с margin</td>
+                    <td>519 px</td>
+                    <td>450 px</td>
+                </tr>
+                <tr>
+                    <td>Полная высота блока с рамкой и padding</td>
+                    <td>247 px</td>
+                    <td>180 px</td>
+                </tr>
+                <tr>
+                    <td>Полная высота вместе с margin</td>
+                    <td>297 px</td>
+                    <td>230 px</td>
+                </tr>
+            </table>
+
+            <p class="explanation">
+                При <strong>content-box</strong> width и height задают только область содержимого.
+                Поэтому к ним добавляются padding и рамка.
+            </p>
+            <p class="explanation">
+                При <strong>border-box</strong> width и height включают содержимое, padding и рамку.
+                Поэтому размер содержимого уменьшается.
+            </p>
+        </section>
+
+        <!-- Задание №2 -->
+        <section id="task2" class="section">
+            <h2>Задание №2. Вложенные блоки</h2>
+
+            <div class="outer">
+                <h2>Внешний блок</h2>
+                <div class="middle">
+                    <h3>Средний блок</h3>
+                    <div class="inner">
+                        <p>Внутренний блок</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Задание №3 -->
+        <section id="task3" class="section">
+            <h2>Задание №3. Карточки товаров</h2>
+
+            <div class="cards">
+                <article class="card card-one">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=440&q=80"
+                         alt="Наушники" width="220" height="160">
+                    <h3>Беспроводные наушники</h3>
+                    <p class="card-text">Качественный звук и удобная мягкая посадка.</p>
+                    <p class="price">4 500 ₽</p>
+                    <p class="old-price">5 900 ₽</p>
+                    <button type="button">Подробнее</button>
+                    <p class="badge">Хит продаж</p>
+                </article>
+
+                <article class="card card-two">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=440&q=80"
+                         alt="Умные часы" width="220" height="160">
+                    <h3>Умные часы</h3>
+                    <p class="card-text">Шаги, уведомления и контроль активности.</p>
+                    <p class="price">7 200 ₽</p>
+                    <p class="old-price">8 500 ₽</p>
+                    <button type="button">Подробнее</button>
+                    <p class="badge">Новинка</p>
+                </article>
+
+                <article class="card card-three">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=440&q=80"
+                         alt="Ноутбук" width="220" height="160">
+                    <h3>Ноутбук для учёбы</h3>
+                    <p class="card-text">Для занятий, работы с документами и интернета.</p>
+                    <p class="price">52 000 ₽</p>
+                    <p class="old-price">59 000 ₽</p>
+                    <button type="button">Подробнее</button>
+                    <p class="badge">В наличии</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Задание №4 -->
+        <section id="task4" class="section">
+            <h2>Задание №4. Ограничения размеров и overflow</h2>
+
+            <div class="article article-auto">
+                <p>Первый абзац: блочная модель описывает размер элемента и его отступы.</p>
+                <p>Второй абзац: width задаёт основную ширину, а padding увеличивает общую ширину при content-box.</p>
+                <p>Третий абзац: border-box изменяет способ расчёта ширины и высоты элемента.</p>
+                <p>Четвёртый абзац: overflow: auto автоматически добавляет полосы прокрутки, если контент не помещается.</p>
+                <p>Пятый абзац: hidden скрывает лишнее содержимое, а scroll всегда показывает полосы прокрутки.</p>
+                <p>Дополнительный текст помогает увидеть работу каждого режима прокрутки.</p>
+            </div>
+
+            <h3>Режим hidden</h3>
+            <div class="article article-hidden">
+                <p>Первый абзац для проверки hidden.</p>
+                <p>Второй абзац не помещается целиком в заданную высоту.</p>
+                <p>Третий абзац скрывается вместе с остальным лишним содержимым.</p>
+                <p>Четвёртый абзац показывает действие свойства hidden.</p>
+                <p>Пятый абзац недоступен для просмотра прокруткой.</p>
+            </div>
+
+            <h3>Режим scroll</h3>
+            <div class="article article-scroll">
+                <p>Первый абзац для проверки scroll.</p>
+                <p>Второй абзац остаётся доступным через прокрутку.</p>
+                <p>Третий абзац находится ниже видимой области.</p>
+                <p>Четвёртый абзац показывает постоянные полосы прокрутки.</p>
+                <p>Пятый абзац можно прочитать, прокручивая блок.</p>
+            </div>
+
+            <p class="explanation">
+                <strong>auto</strong> показывает полосы только при необходимости,
+                <strong>hidden</strong> скрывает лишнее,
+                <strong>scroll</strong> всегда показывает полосы прокрутки.
+            </p>
+        </section>
+
+        <!-- Задание №5 -->
+        <section id="task5" class="section">
+            <h2>Задание №5. Margin и схлопывание отступов</h2>
+
+            <h3>Исходный пример</h3>
+            <div class="first">Первый блок</div>
+            <div class="second">Второй блок</div>
+            <p>Расстояние составляет 50 px: берётся больший из отступов 50 px и 30 px.</p>
+
+            <h3>Изменённые отступы: 80 px и 100 px</h3>
+            <div class="first first-big">Первый блок</div>
+            <div class="second second-big">Второй блок</div>
+            <p>Расстояние составляет 100 px: схлопывание оставляет больший margin.</p>
+
+            <h3>Родитель с overflow: auto</h3>
+            <div class="margin-parent">
+                <div class="first first-parent">Первый блок</div>
+                <div class="second second-parent">Второй блок</div>
+            </div>
+            <p>
+                Overflow: auto создаёт для родителя новый контекст,
+                поэтому отступы соседних дочерних блоков не схлопываются.
+            </p>
+        </section>
+
+        <!-- Большое индивидуальное задание -->
+        <section id="portal" class="portal">
+            <h2>Вариант №2. Образовательный портал</h2>
+
+            <div class="portal-banner">
+                <div>
+                    <h3>Развивайтесь вместе с нами</h3>
+                    <p>Онлайн-курсы, практические задания и проверка знаний.</p>
+                </div>
+                <div class="progress-box">
+                    <p>Пройдено курсов</p>
+                    <strong>12 из 20</strong>
+                </div>
+            </div>
+
+            <div class="portal-grid">
+                <article class="course">
+                    <h3>Основы HTML и CSS</h3>
+                    <p>Структура страницы, стили и блочная модель.</p>
+                    <p class="course-time">Длительность: 8 часов</p>
+                </article>
+
+                <article class="course">
+                    <h3>Информатика</h3>
+                    <p>Алгоритмы, системы счисления и работа данных.</p>
+                    <p class="course-time">Длительность: 12 часов</p>
+                </article>
+
+                <article class="course">
+                    <h3>Математика</h3>
+                    <p>Уравнения, функции и решение практических задач.</p>
+                    <p class="course-time">Длительность: 10 часов</p>
+                </article>
+            </div>
+
+            <div class="portal-info">
+                <div class="info-block">
+                    <h3>Популярный курс</h3>
+                    <p>Веб-разработка для начинающих — доступно и понятно.</p>
+                </div>
+                <div class="info-block">
+                    <h3>Нужна помощь?</h3>
+                    <p>Напишите: study@portal.ru</p>
+                </div>
+                <div class="info-block">
+                    <h3>Формат обучения</h3>
+                    <p>Видео, практика и контрольные задания.</p>
+                </div>
+            </div>
+
+            <section class="contact">
+                <h3>Контакты</h3>
+                <p>Адрес: кк</p>
+                <p>Телефон: ура дайте номер </p>
+                
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>ура можно 80 балов </p>
+    </footer>
+</body>
+</html>
